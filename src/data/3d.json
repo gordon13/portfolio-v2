@@ -1,0 +1,118 @@
+[
+  {"url":"images/dishonoured_lantern.jpg",
+  "date":"2016-01-31",
+  "name":"Dishonoured Lantern",
+  "type":"Game asset",
+  "description":"All credits to the Dishonoured developers for the design. All I did was try to replicate the game asset from screenshots.",
+  "software":[
+    "blender",
+    "photoshop",
+    "quixel"
+  ]},
+
+  {"url":"images/lamp_posts.jpg",
+  "date":"2016-01-31",
+  "name":"Lamp post",
+  "type":"Game asset",
+  "description":"Lamp post created for the Dreamtime game by Druid Gameworks",
+  "offset":"90% 50%",
+  "software":[
+    "blender",
+    "photoshop",
+    "quixel"
+  ]},
+
+  {"url":"images/druid_stone_banner.jpg",
+  "date":"2016-01-29",
+  "name":"Stone marker",
+  "type":"Game asset",
+  "software":[
+    "blender",
+    "photoshop",
+    "quixel"
+  ]},
+
+  {"url":"images/rat_beauty.jpg",
+  "date":"2016-01-28",
+  "name":"Lester",
+  "type":"Game asset",
+  "software":[
+    "blender",
+    "photoshop"
+  ]},
+
+  {"url":"images/pistachio.jpg",
+  "date":"2016-01-31",
+  "name":"Pistachio",
+  "type":"High resolution render",
+  "software":[
+    "blender"
+  ]},
+
+  {"url":"images/plant_bug.png",
+  "date":"2016-01-29",
+  "name":"Big wide world",
+  "type":"High resolution render",
+  "software":[
+    "blender",
+    "photoshop"
+  ]},
+
+  {"url":"images/bullfrog_beauty.jpg",
+  "date":"2016-01-28",
+  "name":"Bullfrog",
+  "type":"Game asset",
+  "software":[
+    "blender",
+    "photoshop"
+  ]},
+
+  {"url":"images/doge.jpg",
+  "date":"2016-01-29",
+  "name":"Doge",
+  "type":"Game asset",
+  "software":[
+    "blender",
+    "photoshop"
+  ]},
+
+  {"url":"images/doge4.jpg",
+  "date":"2016-01-29",
+  "name":"Doge and backpack",
+  "type":"Game asset",
+  "description":"Doge the dog wearing a backpack",
+  "software":[
+    "blender",
+    "photoshop"
+  ]},
+
+  {"url":"images/racoon_1.png",
+  "date":"2016-01-31",
+  "name":"Raccoon",
+  "type":"Game asset",
+  "description":"This was created for the Dota 2 market place. It is rendered with an approximation of the Dota 2 Hero Shader created in Blender",
+  "software":[
+    "blender",
+    "photoshop"
+  ]},
+
+  {"url":"images/4.jpg",
+  "date":"2016-01-31",
+  "name":"Dogeworld",
+  "type":"Game asset",
+  "description":"Assets created for a canceled Dogeworld game project",
+  "software":[
+    "blender",
+    "photoshop"
+  ]},
+
+  {"url":"images/shaman-character.jpg",
+  "date":"2016-01-29",
+  "name":"Shaman",
+  "type":"Game asset",
+  "description":"Shaman character for game concept",
+  "software":[
+    "blender",
+    "photoshop"
+  ]}
+]

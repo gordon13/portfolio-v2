@@ -1,0 +1,26 @@
+{% set name = "index" %}
+{% set title = "Paul Le Henaff - Portfolio" %}
+{% extends "src/includes/main.html" %}
+
+{% block main %}
+	{% for piece in 3d %}
+		<figure class="thumbnail" tabindex="0" style="background-image: url('{{piece.url|thumbnail}}'); background-position: {{piece.offset}};">
+			<div href="{{piece.url}}" class="fullsize-link" target="_blank">{{piece.name}} - {{piece.type}}</div>
+			<section class="info-overlay">
+				<div class="content">
+					<span class="glyphicon glyphicon-zoom-in zoom" aria-hidden="true"></span>
+					<h2>{{piece.name}}</h2>
+					<small>{{piece.type}}</small>
+					<a href="{{piece.url}}">View full resolution</a>
+					<div class="software">
+						<figure>
+							{% for ware in piece.software %}
+								<img src="{{software[ware].url}}" alt="{{ware}}" title="{{ware}}" data-toggle="modal" data-target="#modal-full-screen"/>
+							{% endfor %}
+						</figure>
+					</div>
+				</div>
+			</section>
+		</figure>
+	{% endfor %}
+{% endblock %}

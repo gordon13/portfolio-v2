@@ -1,0 +1,345 @@
+/*== variables ==*/
+@background-colour: #2B2A2A;
+@main-font-colour: #9d9d9d;
+@accent-colour: orange;
+@nav-background: #0C0C0C;
+@highlight-colour: white;
+
+@footer-image: "../img/footer.png";
+
+/*== Gallery settings ==*/
+@art-name-font-colour: #f3f3f3;
+@art-width: 300px;
+@art-height: 500px;
+
+/*/////////// Make navbar work without JS (progressive enhancement) ///////////*/
+#navbar-toggle-cbox {
+    display:none
+}
+
+#navbar-toggle-cbox:checked ~ .collapse {
+    display: block;
+}
+
+/*//////////// Utility ///////*/
+.clearfix:after { 
+    content: " ";
+    display: block; 
+    height: 0; 
+    clear: both;
+}
+
+.keyframes(@name; @arguments) {
+    @-moz-keyframes @name { @arguments(); }
+    @-webkit-keyframes @name { @arguments(); }
+    @keyframes @name { @arguments(); }
+}
+
+.animation(@arguments) {
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    animation: @arguments;
+}
+
+/*/////////// navbar ///////////*/
+.navbar {
+	margin: 0;
+}
+.navbar li a{
+	font-size: 16px;
+}
+.navbar-inverse {
+	background-image: none;
+	background-color: @nav-background;
+    background-repeat: repeat-x;
+    border-radius: 0px;
+    border-bottom: 4px solid @accent-colour;
+    position: relative;
+    z-index: 100;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: @accent-colour;
+}
+
+/*////////// brand ////////////*/
+.brand .nametag {
+
+}
+.nametag .first-name {
+    color: @highlight-colour;
+}
+.nametag .last-name {
+    color: @accent-colour;
+}
+/*//////// globals ////////*/
+main {
+    min-height: 1300px;
+}
+/*///////////  body /////////////*/
+h1 {
+	text-transform: uppercase;
+    font-weight: 900;
+}
+p {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+body {
+	background-color: @background-colour;
+	font-family: helvetica;
+	font-weight: 600;
+	color: @main-font-colour;
+}
+
+/*//////////// gallery ////////////////*/
+
+/*===== pure css expand feature =========*/
+.thumbnail .fullsize-link {
+    display: none;
+    background-color: #0c0c0c;
+    text-align: center;
+    line-height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.47) 0 5px 2px;
+}
+
+.thumbnail:focus {
+    outline: none;
+    width: 100%;
+    height: 1024px;
+    background-position: 50% !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    .info-overlay {
+        display:none;
+    }
+    .fullsize-link {
+        display:block;
+    }
+}
+
+/*=====================================*/
+
+.modal-content {
+    background-color: black;
+    border-radius: 0px;
+}
+
+.modal-body img {
+    width: 100%;
+}
+
+.modal-title {
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #3C3B3B;
+    padding: 5px 15px 5px 15px;
+}
+
+.modal-dialog {
+    width: auto;
+    margin-top: 80px;
+    margin-right: 15%;
+    margin-bottom: 50px;
+    margin-left: 15%;
+}
+
+
+/* thumbnails */
+.thumbnail {
+    display: block;
+    float: left;
+    background-position: 50%, 50%;
+    background-size: cover;
+    background-color: inherit;
+    width: @art-width;
+    height: @art-height;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+
+}
+
+/*section.info-overlay:hover*/
+.keyframes(details-fade-in;{
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+});
+.keyframes(details-background-fade-in;{
+    0% { opacity: 0; }
+    100% { opacity: 0.2; }
+});
+.thumbnail .info-overlay:hover  {
+    .animation(details-fade-in 0.5s ease-out forwards);
+    text-shadow: black 1px 1px 1px;
+    padding-left: 4px;
+    border: solid @accent-colour 1px;
+}
+.thumbnail .info-overlay:hover:before {
+    .animation(details-background-fade-in 0.5s ease-out forwards);
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAJElEQVQYV2NkwAT/GRgYGJGFUThQCRorAhmPFwyAm9DdgxEEAORECQlt3qIUAAAAAElFTkSuQmCC);*/
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAOklEQVQYV43MSwoAMAgD0eT+h7ZYaOlHo7N+DNHL2HAGgBWcyGcKbqTghTL4oQiG6IUpOqFEC5bI4QD8PAoKjIiEFQAAAABJRU5ErkJggg==);
+}
+.thumbnail .info-overlay {
+	position: absolute;
+	width: @art-width;
+	height: @art-height;
+	padding-left: @art-width;
+    border: solid black 1px;
+}
+
+.thumbnail .info-overlay h2 {
+    width: auto;
+    color: @art-name-font-colour;
+    text-transform: uppercase;
+    font-weight: 900;
+    border-bottom: solid 3px rgb(73, 112, 199);
+    padding-bottom: 10px;
+}
+
+.thumbnail .info-overlay .content{
+	margin-top: 75%;
+	padding: 15px;
+	color: @art-name-font-colour;
+    position: relative;
+}
+.thumbnail .info-overlay .content .zoom{
+	font-size: 50px;
+	margin-left: 40%;
+	margin-top: -90px;
+	opacity: 0.5;
+}
+
+.thumbnail .info-overlay .software img{
+	width: 25%;
+	height: auto;
+	display: inline-block;
+	
+}
+
+/* ///////   Full screen view bit ////////// */
+.full-screen img {
+	width: 100%;	
+	max-width: 1920px;
+}
+
+#modal-full-screen .close {
+    overflow: visible;
+    float: none;
+    text-shadow: none;
+    opacity: 0.5;
+    float: right;
+    margin-top: 5px;
+    height: 15px;
+    outline: none;
+}
+
+#modal-full-screen .close:hover {
+    opacity: 0.9;
+}
+
+.full-screen .close img {
+	width: auto;
+}
+
+.full-screen .info {
+    height: 0;
+    margin-left: 10px;
+}
+
+.full-screen .info a.view-fullsize {
+	color: @highlight-colour;
+	font-weight: 600;
+	opacity: 0.6;
+	text-decoration: none;
+}
+.full-screen .info a.view-fullsize:hover {
+	opacity: 0.9;
+}
+/*////////////////////   skills      /////////////////////////*/
+.skills-software .software * {
+    display: inline-block;
+}
+.skills-software .software img {
+    width: 55px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+.skills-software .software span {
+    color: white;
+    font-size: 18;
+    width: 100px;
+    vertical-align: middle;
+}
+
+.skills-software .software .progress {
+    width: 200px;
+    margin: 0 0 0 20px;
+    vertical-align: middle;
+    border-radius: 0;
+}
+
+.skills-software .software .progress-bar {
+    font-size: 18;
+}
+
+/* art/expertise */
+.row.skill {
+    margin-bottom: 10px;
+}
+.skills-art .skill * {
+    display: inline-block;
+}
+.skills-art .skill span {
+    color: white;
+    font-size: 18;
+    width: 300px;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+.skills-art .skill .progress {
+    width: 200px;
+    margin: 0 0 0 20px;
+    vertical-align: middle;
+    border-radius: 0;
+}
+
+.skills-art .skill .progress-bar {
+    font-size: 18;
+}
+
+/*////////// about    //////////////*/
+img.profile-image {   
+    float: left;
+    margin-right: 10px;
+    max-width: 256px;
+    max-height: 256px;
+}
+
+/*////////// Footer ////////////*/
+footer {
+    background: url("../img/footer.png");
+    background-size: auto 100%;
+    background-position: 50%;
+    height: 256px;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+}
